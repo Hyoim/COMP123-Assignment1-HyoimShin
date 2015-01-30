@@ -34,16 +34,19 @@ namespace Assignment1
         //calls the hitAttempt method that determines sucess or failure of attack
         public void fight()
         {
-            bool hitResult;      // success or failure for attack
-            hitResult = hitAttempt(rnd);
+            bool hitResult;                  // success or failure for attack
+            int damage, damageFact;          // is used to calculate damage
+
+            hitResult = hitAttempt(rnd);     
 
             if (hitResult == true)
             {
-                // damage = hero's strength * hitDamageFact
-                int damage;
+                damageFact = hitDamage(rnd);    
+
+                // damage = hero's strength * damageFact
+                damage = this.strength * damageFact;
 
                 Console.WriteLine("---------------> Attack succeeded");
-                damage = this.strength * hitDamage(rnd);
                 Console.WriteLine("                 The target is attacked by {0}", damage);
                 Console.WriteLine();
             }
@@ -72,7 +75,6 @@ namespace Assignment1
         private void generateAblities(Random rnd)
         {
             // Random class is used for making random hero's ability between 1 to 100 
-
             this.strength = rnd.Next(1, 101);
             this.speed = rnd.Next(1, 101);
             this.health = rnd.Next(1, 101);
@@ -104,7 +106,6 @@ namespace Assignment1
             // Random class is used for generating hit factor
             // the factor between 1 and 6 is used to calculate the hit damage
             int hitDamageFact = rnd.Next(1, 7);
-           
             return hitDamageFact;
         }
     }
