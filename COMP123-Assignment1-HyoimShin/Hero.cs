@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Hyoim Shin (300802252)
+// COMP123-062
+// Assignment1
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,8 +39,13 @@ namespace Assignment1
 
             if (hitResult == true)
             {
+                // damage = hero's strength * hitDamageFact
+                int damage;
+
                 Console.WriteLine("---------------> Attack succeeded");
-                hitDamage(rnd);
+                damage = this.strength * hitDamage(rnd);
+                Console.WriteLine("                 The target is attacked by {0}", damage);
+                Console.WriteLine();
             }
             else
             {
@@ -90,19 +99,13 @@ namespace Assignment1
             }
         }
 
-        private void hitDamage(Random rnd)
+        private int hitDamage(Random rnd)
         {
             // Random class is used for generating hit factor
             // the factor between 1 and 6 is used to calculate the hit damage
-
             int hitDamageFact = rnd.Next(1, 7);
-            // Console.WriteLine(hitDamageFact);   // for testing a fact value
-
-            // hit damage = hero's strength * hitDamageFact
-
-            int damage = this.strength * hitDamageFact;
-            Console.WriteLine("                 The target is attacked by {0}", damage);
-            Console.WriteLine();
+           
+            return hitDamageFact;
         }
     }
 }

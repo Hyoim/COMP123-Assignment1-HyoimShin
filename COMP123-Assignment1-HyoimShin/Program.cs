@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Hyoim Shin (300802252)
+// COMP123-062
+// Assignment1
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +17,8 @@ namespace Assignment1
             string consoleKey = "";
 
             Hero superman = new Hero("Superman");
-            // Console.WriteLine("Superman");
-            superman.show();
+  
+            superman.show();  //calls show method
 
 
             while (consoleKey != "q")
@@ -24,7 +28,7 @@ namespace Assignment1
                     case "q":
                         break;
                     case "y":
-                        superman.fight();
+                        superman.fight();     //calls fight method
                         consoleKey = "";
                         break;
                     default:
