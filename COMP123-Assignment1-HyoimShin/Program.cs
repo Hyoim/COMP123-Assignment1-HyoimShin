@@ -1,12 +1,17 @@
-﻿// Hyoim Shin (300802252)
-// COMP123-062
-// Assignment1
+﻿/***********************************************
+ * Hyoim Shin (300802252)
+ * 30 January, 2015
+ * Assignment1 : Implement Hero Class
+ * Revision History : 
+ * - Changed return type of hitDamage 
+ * - Added comment and program header
+ * ********************************************/
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;`
+using System.Threading.Tasks;
 
 namespace Assignment1
 {
@@ -18,7 +23,7 @@ namespace Assignment1
 
             Hero superman = new Hero("Superman");
   
-            superman.show();  //calls show method
+            superman.show();                   //calls show method
 
 
             while (consoleKey != "q")

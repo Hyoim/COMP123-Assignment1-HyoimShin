@@ -1,6 +1,11 @@
-﻿// Hyoim Shin (300802252)
-// COMP123-062
-// Assignment1
+﻿/***********************************************
+ * Hyoim Shin (300802252)
+ * 30 January, 2015
+ * Assignment1 : Implement Hero Class
+ * Revision History : 
+ * - Changed return type of hitDamage 
+ * - Added comment and program header
+ * ********************************************/
 
 using System;
 using System.Collections.Generic;
@@ -28,6 +33,7 @@ namespace Assignment1
             this.name = name;
             generateAblities(rnd);
         }
+
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++
 
@@ -70,7 +76,9 @@ namespace Assignment1
             Console.WriteLine();
         }
 
+
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++++
+
         // generates the ability numbers for the strength, speed, health 
         private void generateAblities(Random rnd)
         {
@@ -101,10 +109,12 @@ namespace Assignment1
             }
         }
 
+        //calculates the damage the Hero causes to the target on a hit
         private int hitDamage(Random rnd)
         {
             // Random class is used for generating hit factor
             // the factor between 1 and 6 is used to calculate the hit damage
+
             int hitDamageFact = rnd.Next(1, 7);
             return hitDamageFact;
         }
