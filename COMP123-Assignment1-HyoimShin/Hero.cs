@@ -23,9 +23,9 @@ namespace Assignment1
         public string name;
 
         // PRIVATE PROPERTIES ++++++++++++++++++++++++++++++++++++++++
-        private int strength = 0;
-        private int speed = 0;
-        private int health = 0;
+        protected int strength = 0;
+        protected int speed = 0;
+        protected int health = 0;
 
         // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++
         public Hero(string name)
@@ -52,13 +52,15 @@ namespace Assignment1
                 // damage = hero's strength * damageFact
                 damage = this.strength * damageFact;
 
-                Console.WriteLine("---------------> Attack succeeded");
-                Console.WriteLine("                 The target is attacked by {0}", damage);
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine("Attack succeeded");
+                Console.WriteLine("The target is attacked by {0}", damage);
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("---------------> Attack failed");
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine("Attack failed");
                 Console.WriteLine();
             }
         }
@@ -66,13 +68,14 @@ namespace Assignment1
         //displays hero's ability score
         public void show()
         {
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+{0, 19} {1, -13}+", "The ability of", this.name);
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+ {0, 17} {1, -13} +", "Strength:", this.strength);
-            Console.WriteLine("+ {0, 17} {1, -13} +", "Speed:", this.speed);
-            Console.WriteLine("+ {0, 17} {1, -13} +", "Health:", this.health);
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine(String.Format("The ability of {0}", this.name).PadLeft(42 - (14 - (this.name.Length / 2))));
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++");
+
+            Console.WriteLine("{0, 22} {1, -20}", "Strength:", this.strength);
+            Console.WriteLine("{0, 22} {1, -20}", "Speed:", this.speed);
+            Console.WriteLine("{0, 22} {1, -20}", "Health:", this.health);
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine();
         }
 
@@ -95,8 +98,7 @@ namespace Assignment1
             // Hero hits would succeed 20% of the time
 
             int hitAttempt = rnd.Next(1, 11);
-
-            Console.WriteLine("---------------> Attempting attack");
+            Console.Write("{0} is attempting attack", this.name);
             Console.WriteLine();
 
             if ((hitAttempt == 1) || (hitAttempt == 2))

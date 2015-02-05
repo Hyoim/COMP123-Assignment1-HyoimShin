@@ -1,11 +1,12 @@
-﻿/***********************************************
+﻿/***********************************************************
  * Hyoim Shin (300802252)
- * 30 January, 2015
+ * February 5, 2015
  * Assignment1 : Implement Hero Class
  * Revision History : 
  * - Changed return type of hitDamage 
  * - Added comment and program header
- * ********************************************/
+ * - Added new superhero object by using SuperHero class
+ * ********************************************************/
 
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,11 @@ namespace Assignment1
             string consoleKey = "";
 
             Hero superman = new Hero("Superman");
-  
-            superman.show();                   //calls show method
+            SuperHero superhero = new SuperHero("Super Hero");
+
+            Console.WriteLine();
+            superman.show();                      // calls show method of Hero class
+            superhero.showPowers();               // calls showPowers of SuperHero class
 
 
             while (consoleKey != "q")
@@ -33,7 +37,8 @@ namespace Assignment1
                     case "q":
                         break;
                     case "y":
-                        superman.fight();     //calls fight method
+                       // superman.fight();     //calls fight method
+                       superhero.fight();
                         consoleKey = "";
                         break;
                     default:
